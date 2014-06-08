@@ -1,7 +1,6 @@
 file <- "../data/household_power_consumption.txt"
 data <- read.delim(file, header = TRUE, sep=";", na.strings = "?")
 x <- paste(data$Date, data$Time)
-head(x)
 
 data$DateTime <- strptime(x, format = "%d/%m/%Y %T")
 
@@ -12,6 +11,6 @@ png(filename = "plot1.png",
     width = 480, height = 480, units = "px", pointsize = 12,
     bg = "white", type = c("cairo", "cairo-png", "Xlib", "quartz"))
 
-hist(dsub$Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", col = "tomato")
+hist(dsub$Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", col = "red")
 
 dev.off()
