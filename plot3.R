@@ -9,13 +9,13 @@ dsub <- subset(data, DateTime >= as.POSIXct('2007-02-01 00:00') & DateTime <=
 
 png(filename = "plot3.png",
     width = 480, height = 480, units = "px", pointsize = 12,
-    bg = "white", type = c("cairo", "cairo-png", "Xlib", "quartz"))
+    bg = "transparent", type = c("cairo", "cairo-png", "Xlib", "quartz"))
 
-plot(dsub$DateTime, dsub$Sub_metering_1, xlab = NA, ylab = "Energy sub metering", 
+plot(dsub$DateTime, dsub$Sub_metering_1, xlab = NA, ylab = "Energy sub metering",
      type = "l")
 points(dsub$DateTime, dsub$Sub_metering_2, type = "l", col = "red")
 points(dsub$DateTime, dsub$Sub_metering_3, type = "l", col = "blue")
-legend("topright", names(dsub[7:9]),  
+legend("topright", names(dsub[7:9]),
        lwd = 2 ,col = c("black", "red", "blue"))
 
 dev.off()

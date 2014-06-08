@@ -9,16 +9,16 @@ dsub <- subset(data, DateTime >= as.POSIXct('2007-02-01 00:00') & DateTime <=
 
 png(filename = "plot4.png",
     width = 480, height = 480, units = "px", pointsize = 12,
-    bg = "white", type = c("cairo", "cairo-png", "Xlib", "quartz"))
+    bg = "transparent", type = c("cairo", "cairo-png", "Xlib", "quartz"))
 
 par(mfrow = c(2,2))
-plot(dsub$DateTime, dsub$Global_active_power, xlab = NA, ylab = "Global Active Power", 
+plot(dsub$DateTime, dsub$Global_active_power, xlab = NA, ylab = "Global Active Power",
      type = "l")
 
-plot(dsub$DateTime, dsub$Voltage, xlab = "datetime", ylab = "Voltage", 
+plot(dsub$DateTime, dsub$Voltage, xlab = "datetime", ylab = "Voltage",
      type = "l")
 
-plot(dsub$DateTime, dsub$Sub_metering_1, xlab = NA, ylab = "Energy sub metering", 
+plot(dsub$DateTime, dsub$Sub_metering_1, xlab = NA, ylab = "Energy sub metering",
      type = "l")
 points(dsub$DateTime, dsub$Sub_metering_2, type = "l", col = "red")
 points(dsub$DateTime, dsub$Sub_metering_3, type = "l", col = "blue")
